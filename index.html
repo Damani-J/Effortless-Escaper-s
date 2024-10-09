@@ -1822,17 +1822,28 @@
 
         }
         input[type=text] {
-        width: 100%;
-        box-sizing: border-box;
-        border: 2px solid #ccc;
-        border-radius: 4px;
-        font-size: 16px;
-        background-color:mistyrose;
-        background-image: url('favicon (1).ico');
-        background-position: 10px 10px;
-        background-repeat: no-repeat;
-        padding: 12px 20px 12px 40px;
+            width: 100%;
+            box-sizing: border-box;
+            border: 2px solid #4CAF50;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: mistyrose;
+            background-image: url('favicon (1).ico');
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            padding: 12px 20px 12px 40px;
+        }
 
+        input[type="date"] {
+            padding: 10px;
+            border: 2px solid #4CAF50; /* Add a green border */
+            border-radius: 5px; /* Rounded corners */
+            background-color: mistyrose; /* Light gray background */
+            color: #333; /* Text color */
+            font-size: 16px;
+            background-image: url('favicon (2).ico');
+            background-repeat: no-repeat;
+        }
         footer{
             text-align: center;
             margin-trim: block-start;
@@ -1868,8 +1879,8 @@
         </div>
     </div>
 </div>
-<script src="js/extention/choices.js"></script>
-<script src="js/extention/flatpickr.js"></script>
+<!--<script src="js/extention/choices.js"></script>
+<script src="js/extention/flatpickr.js"></script> -->
 <script>
     flatpickr(".datepicker",
         {});
