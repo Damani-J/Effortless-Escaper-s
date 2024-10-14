@@ -1530,7 +1530,7 @@
 
         .s002 {
             min-height: 100vh;
-            display: -ms-flexbox;
+            display: -ms-flex;
             display: flex;
             -ms-flex-pack: center;
             justify-content: center;
@@ -1913,41 +1913,37 @@
 </head>
 <body>
 <div class="s002">
-    <div class="form-wrapper">
-        <h1> Your Journey Awaits With Effortless Escapes </h1>
-        <div class="header" style="margin-bottom: 10px>
-            <form method="POST">
+    <form class="form-wrapper" style="margin-left:400px">
+        <h1> Effortless Escapes </h1>
+        <div class="header" style="margin-bottom: 10px;">
+            <form method="POST"  id="searchForm" >
             <!-- First input field -->
-            <div class="form-group"  style ="margin-bottom: 2em">
+        <input type="text" id="destination" name="destination" style=" width: 720px"
+               placeholder="Describe your ideal destination as well as things you'd like to do.">
+    </div>
 
-                
-                <input type="text" placeholder="Describe your ideal destination!">
-            </div>
 
-            <!-- <div class="form-group"> -->
 
         <div class="form-group">
-
-            <input type="date"  style="margin-right: 5em" >
-            <input type="date"  style="margin-right: 9em">
-
-                <select>
-                    <!-- Date and Adult fields -->
-                    <option>1 Adult</option>
-                    <option>2 Adults</option>
-                    <option>3 Adults</option>
-                    <option>4 Adults</option>
+            <!--date fields-->
+            <input type="date" id="leave" name="leave" style="margin-right: 5em" >
+            <input type="date" id="return" name="return"   style="margin-right: 9em">
+            <!-- Adult fields -->
+                <select id="adults" name="adults">
+                    <option value="1">1 Adult</option>
+                    <option value="2">2 Adults</option>
+                    <option value="3">3 Adults</option>
+                    <option value="4">4 Adults</option>
                 </select>
             </div>
 
             <!-- Search button -->
-            <div class="form-group">
-                <button>Search</button>
-            </div>
-                <form>
+    <div class="form-group">
+        <button type="submit" id="searchBtn" style="margin-right:30px">Search</button>
+    </div>
+    </form>
         </div>
     </div>
-</div>
 <!--<script src="js/extention/choices.js"></script>
 <script src="js/extention/flatpickr.js"></script>
 <script>
@@ -1965,7 +1961,31 @@
     document.querySelector('.calendar-icon').addEventListener('click', function() {
         document.getElementById('start-date').focus();
     });
-</script>
+
+document.addEventListener('DOMContentLoaded', () => {
+const searchForm = document.getElementById('searchForm');
+searchForm.addEventListener('submit', function(event) {
+// Prevent the form from submitting the default way
+event.preventDefault();
+
+// Capture form data
+const destination = document.getElementById('destination').value;
+const departureDate = document.getElementById('departureDate').value;
+const returnDate = document.getElementById('returnDate').value;
+const adults = document.getElementById('adults').value;
+
+// Create the API request (example using a GET request)
+fetch(`https://api.example.com/search?destination=${destination}&date=${date}&adults=${adults}`)
+.then(response => response.json()) // Parse the JSON from the response
+.then(data => {
+console.log(data); // Handle the response data
+// You can update your page with the API data here
+})
+.catch(error => {
+console.error('Error fetching data:', error);
+});
+});
+});
 
 </script>
 <footer style="background: mistyrose">
