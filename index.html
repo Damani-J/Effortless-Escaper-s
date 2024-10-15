@@ -53,6 +53,7 @@
             font-family: "Courgette", cursive ;
             color: lightcyan;
             text-shadow: 2px 2px 4px deeppink;
+            margin-left: 10rem;
         }
 
         /* Grouping content
@@ -1865,14 +1866,14 @@
             background-color: lightcyan; /* Bright, vacation-themed color */
             color: darkgoldenrod;
             border: none;
-            border-radius: 50px; /* Circular, inviting shape */
+            border-radius: 10px; /* Circular, inviting shape */
             padding: 10px 25px;
             font-size: 18px;
             cursor: pointer;
             transition: transform 0.2s ease-in-out, background-color 0.3s ease;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             margin-top: 35px;
-            margin-left: 950px;
+            margin-right: 950px;
             align-items: center;
             justify-content: center;
 
@@ -1917,10 +1918,10 @@
         <h1> Effortless Escapes </h1>
         <div class="header" style="margin-bottom: 10px;">
             <form method="POST"  id="searchForm" >
-            <!-- First input field -->
-        <input type="text" id="destination" name="destination" style=" width: 720px"
-               placeholder="Describe your ideal destination as well as things you'd like to do.">
-    </div>
+                <!-- First input field -->
+                <input type="text" id="destination" name="destination" style=" width: 720px"
+                       placeholder="Describe your ideal destination as well as things you'd like to do.">
+        </div>
 
 
 
@@ -1929,65 +1930,17 @@
             <input type="date" id="leave" name="leave" style="margin-right: 5em" >
             <input type="date" id="return" name="return"   style="margin-right: 9em">
             <!-- Adult fields -->
-                <select id="adults" name="adults">
-                    <option value="1">1 Adult</option>
-                    <option value="2">2 Adults</option>
-                    <option value="3">3 Adults</option>
-                    <option value="4">4 Adults</option>
-                </select>
-            </div>
-
-            <!-- Search button -->
-    <div class="form-group">
-        <button type="submit" id="searchBtn" style="margin-right:30px">Search</button>
-    </div>
-    </form>
+            <select id="adults" name="adults">
+                <option value="1">1 Adult</option>
+                <option value="2">2 Adults</option>
+                <option value="3">3 Adults</option>
+                <option value="4">4 Adults</option>
+            </select>
+            <button type="submit" id="searchBtn" style="margin-right:30px">Search</button>
         </div>
-    </div>
-<!--<script src="js/extention/choices.js"></script>
-<script src="js/extention/flatpickr.js"></script>
-<script>
-     flatpickr(".datepicker",
-        {});
-
-</script> -->
-<script>
-    const choices = new Choices('[data-trigger]',
-        {
-            searchEnabled: false,
-            itemSelectText: '',
-        });
-    // Trigger the date picker when the custom calendar PNG is clicked
-    document.querySelector('.calendar-icon').addEventListener('click', function() {
-        document.getElementById('start-date').focus();
-    });
-
-document.addEventListener('DOMContentLoaded', () => {
-const searchForm = document.getElementById('searchForm');
-searchForm.addEventListener('submit', function(event) {
-// Prevent the form from submitting the default way
-event.preventDefault();
-
-// Capture form data
-const destination = document.getElementById('destination').value;
-const departureDate = document.getElementById('departureDate').value;
-const returnDate = document.getElementById('returnDate').value;
-const adults = document.getElementById('adults').value;
-
-// Create the API request (example using a GET request)
-fetch(`https://api.example.com/search?destination=${destination}&date=${date}&adults=${adults}`)
-.then(response => response.json()) // Parse the JSON from the response
-.then(data => {
-console.log(data); // Handle the response data
-// You can update your page with the API data here
-})
-.catch(error => {
-console.error('Error fetching data:', error);
-});
-});
-});
-
-</script>
+    </form>
+</div>
+</div>
 <footer style="background: mistyrose">
 
     Created By Damani Johnson and Anthony Flores
