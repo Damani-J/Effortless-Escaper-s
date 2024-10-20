@@ -1,0 +1,14 @@
+{
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-debug": "^5.0.1",
+    "gulp-order": "^1.2.0"
+  },
+  "scripts": {
+    "build": "gulp scripts"
+  },
+  
+    "type": "module"
+  }
+
