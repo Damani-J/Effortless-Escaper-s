@@ -33,79 +33,129 @@
 </head>
 
 <body>
-    <div class="page-wrapper bg-img-1 p-t-200 p-b-120">
-        <h1> Effortless Escapes </h1>
-        <div class="wrapper wrapper--w900">
-            <div class="card card-4">
-                <h2> ✧･ﾟ: *✧Your Journey Awaits ✧･ﾟ *✧</h2>
-                <div class="card-body">
-                    <ul class="tab-list">
-                        <li class="tab-list__item active">
-                        </li>
-                    </ul>
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="tab1">
-                            <form method="POST" action="#">
-                                <div class="input-group input-group-big">
-                                    <label class="label">Destination:</label>
-                                    <input class="input--style-1" type="text" name="address" placeholder="Describe your ideal vacation and the activities you'd like to do" required="required">
-                                    <i class="zmdi zmdi-search input-group-symbol"></i>
-                                </div>
-                                <div class="row row-space">
-                                    <div class="col-2">
-                                        <div class="input-group">
-                                            <label class="label">check-in:</label>
-                                            <input class="input--style-1" type="text" name="check-in" placeholder="mm/dd/yyyy" id="input-start">
+    <body>
+        <body>
+            <div class="page-wrapper bg-img-1 p-t-200 p-b-120">
+                <h1>Effortless Escapes</h1>
+                <div class="wrapper wrapper--w900">
+                    <div class="card card-4">
+                        <h2> Your Journey Awaits </h2>
+                        <div class="card-body">
+                            <ul class="tab-list">
+                                <li class="tab-list__item active"></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="tab1">
+                                    <!-- Form with 'id' attribute added to enable JavaScript interaction -->
+                                    <form id="travelForm" method="POST">
+                                        <div class="input-group input-group-big">
+                                            <label class="label">Destination:</label>
+                                            <!-- Add 'id' attribute for JavaScript -->
+                                            <input class="input--style-1" type="text" name="address" id="keywords" placeholder="Describe your ideal vacation and the activities you'd like to do" required="required">
+                                            <i class="zmdi zmdi-search input-group-symbol"></i>
                                         </div>
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="input-group">
-                                            <label class="label">check-out:</label>
-                                            <input class="input--style-1" type="text" name="check-out" placeholder="mm/dd/yyyy" id="input-end">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row row-space">
-                                    <div class="col-2">
-                                        <div class="input-group">
-                                        <div class="input-group travellers-group">
-                                            <label class="label">Travellers:</label>
-                                            <div class="travellers-options">
-                                                <!-- Adults Dropdown -->
-                                                <label for="adults"></label>
-                                                <select class="input--style-1-small" id="adults">
-                                                    <option value="1">1 Adult</option>
-                                                    <option value="2">2 Adults</option>
-                                                    <option value="3">3 Adults</option>
-                                                </select>
-                                        
-                                                <!-- Children Dropdown -->
-                                                <label for="children"></label>
-                                                <select class="input--style-1-small" id="children">
-                                                    <option value="0">0 Children</option>
-                                                    <option value="1">1 Child</option>
-                                                    <option value="2">2 Children</option>
-                                                    <option value="3">3 Children</option>
-                                                </select>
-                                            
-                    
+                                        <div class="row row-space">
+                                            <div class="col-2">
+                                                <div class="input-group">
+                                                    <label class="label">Check-in:</label>
+                                                    <!-- Add 'id' attribute for JavaScript -->
+                                                    <input class="input--style-1" type="text" name="check-in" id="startDate" placeholder="mm/dd/yyyy">
+                                                </div>
                                             </div>
-                            
+                                            <div class="col-2">
+                                                <div class="input-group">
+                                                    <label class="label">Check-out:</label>
+                                                    <!-- Add 'id' attribute for JavaScript -->
+                                                    <input class="input--style-1" type="text" name="check-out" id="endDate" placeholder="mm/dd/yyyy">
+                                                </div>
+                                            </div>
                                         </div>
-                                       </div>                    
+                                        <div class="row row-space travellers-search">
+                                            <div class="col-2">
+                                                <div class="input-group travellers-group">
+                                                    <label class="label">Travellers:</label>
+                                                    <div class="travellers-options">
+                                                        <label for="adults"></label>
+                                                        <select class="input--style-1-small" id="adults" name="adults">
+                                                            <option value="1">1 Adult</option>
+                                                            <option value="2">2 Adults</option>
+                                                            <option value="3">3 Adults</option>
+                                                        </select>
+        
+                                                        <label for="children"></label>
+                                                        <select class="input--style-1-small" id="children" name="children">
+                                                            <option value="0">0 Children</option>
+                                                            <option value="1">1 Child</option>
+                                                            <option value="2">2 Children</option>
+                                                            <option value="3">3 Children</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+        
+                                            <!-- Align the search button next to the travellers options -->
+                                            <div class="col-2">
+                                                <button class="btn-submit" type="submit">Search</button>
+                                            </div>
+                                        </div>
+                                    </form>
+        
+                                    <!-- Placeholder for the results -->
+                                    <div id="results"></div>
+        
                                 </div>
-                            </form>
-                        <div class="col-2">
-                            <button class="btn-submit" type="submit">search</button>
+                            </div>
                         </div>
-                    </div>
                     </div>
                 </div>
             </div>
-    </div>
-
+        
+            <!-- Footer -->
+            <footer class="footer">
+                Created by Damani Johnson and Anthony Flores (Pic Credit www.canva.com, Template Credit https://colorlib.com)
+            </footer>
+        </body>
+        
     <!-- Jquery JS-->
     <script src="EEV2/dist/combined.js"> </script>
+    <script>
+document.getElementById('travelForm').addEventListener('submit', async function(event) {
+    event.preventDefault();
+
+    const keywords = document.getElementById('keywords').value;
+    const startLocation = document.getElementById('startLocation').value;
+    const numAdults = document.getElementById('numAdults').value;
+    const startDate = document.getElementById('startDate').value;
+    const endDate = document.getElementById('endDate').value;
+
+    const data = {
+        keywords: keywords.split(','),
+        startLocation: startLocation,
+        numAdults: numAdults,
+        startDate: startDate,
+        endDate: endDate
+    };
+
+    // Use fetch to send the data to the backend API
+    const response = await fetch('http://localhost:5000/api/search', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+
+    const result = await response.json();
+    
+    // Display the result in the results div
+    document.getElementById('results').innerHTML = `
+        <h2>Results:</h2>
+        <p>City: ${result.city}</p>
+        <p>Weather: Low - ${result.weather.low}, High - ${result.weather.high}</p>
+        <p>Flight Price: ${result.flightPrice}</p>
+    `;
+});
+</script>
     
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 <footer>
